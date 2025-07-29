@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  backend:
+    build: ./server
+    ports:
+      - '5000:5000'
+    networks:
+      - appnet
+
+  frontend:
+    build: ./client
+    ports:
+      - '3000:80'
+    networks:
+      - appnet
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - '27017:27017'
+    networks:
+      - appnet
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
+
+networks:
+  appnet:
