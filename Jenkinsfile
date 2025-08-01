@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git credentialsId: 'Github-ID', url: 'https://github.com/NeetGupta/task-tracke-rDocker.git'
+                git credentialsId: 'Github-ID', url: 'https://github.com/NeetGupta/task-tracke-rDocker.git', branch: 'main'
             }
         }
 
