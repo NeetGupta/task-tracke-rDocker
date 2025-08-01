@@ -16,9 +16,9 @@ pipeline {
         stage('Deploy with Docker Compose') {
             steps {
                 script {
-                    sh 'docker compose down || true' // optional: stop previous containers
-                    sh 'docker compose pull'         // pull latest images
-                    sh 'docker compose up -d --build'
+                    sh 'docker-compose down || true' // optional: stop previous containers
+                    sh 'docker-compose pull'         // pull latest images
+                    sh 'docker-compose up -d --build'
                 }
             }
         }
